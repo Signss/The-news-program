@@ -51,9 +51,12 @@ def create_app(config_name):
     # 注册注册模块蓝图
     from info.modules.passport import passport_blue
     app.register_blueprint(passport_blue)
-    # 注册新闻详情页蓝图
+    # 注册新闻详情模块蓝图
     from info.modules.news import news_blue
     app.register_blueprint(news_blue)
+    # 注册个人中心模块蓝图
+    from info.modules.user import user_blue
+    app.register_blueprint(user_blue)
     # 开启csrf保护
     @app.after_request
     def after_request(response):
