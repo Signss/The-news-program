@@ -34,6 +34,10 @@ def news_detail(news_id):
     if user:
         if news in user.collection_news:
             is_collected = True
+    is_followed = False
+    if user:
+        if news.user and news.user in user.followed:
+            is_followed = True
     # 渲染用户点赞数据
     comment_like_ids = []
     comment_likes = None
